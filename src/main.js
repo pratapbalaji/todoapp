@@ -15,6 +15,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FastClick from 'fastclick';
 import { Provider } from 'react-redux';
+import App from '../components/App'
 
 import store from './store';
 import router from './router';
@@ -25,7 +26,7 @@ let routes = require('./routes.json').default; // Loaded with utils/routes-loade
 const container = document.getElementById('container');
 
 function renderComponent(component) {
-  ReactDOM.render(<Provider store={store}>{component}</Provider>, container);
+  ReactDOM.render(<Provider store={store}><App /></Provider>, container);
 }
 
 // Find and render a web page matching the current URL path,
