@@ -93,6 +93,7 @@ const config = {
         include: [
           path.resolve(__dirname, '../src'),
           path.resolve(__dirname, '../components'),
+          path.resolve(__dirname, '../containers'),
         ],
         loader: 'babel-loader',
         options: babelConfig,
