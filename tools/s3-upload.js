@@ -13,7 +13,7 @@ const Uploader = new Promise((resolve, reject) => {
   s3Options: {
       accessKeyId: keys.AWS_ACCESS_KEY,
       secretAccessKey: keys.AWS_SECRET_KEY,
-      region: 'us-west-2',
+      region: 'us-east-1',
       sslEnabled: true,
     },
   });
