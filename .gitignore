@@ -13,4 +13,5 @@ npm-debug.log
 # Firebase
 firebase-debug.log
 
+*keys.js
 *.keys.js

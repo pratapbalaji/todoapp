@@ -3,6 +3,7 @@ const path = require('path');
 const build = require('./build');
 const task = require('./task');
 const config = require('./config');
+const keys = require('../keys');
 
 module.exports = task('upload', () => Promise.resolve()
   .then(() => Uploader)
@@ -10,8 +11,8 @@ module.exports = task('upload', () => Promise.resolve()
 const Uploader = new Promise((resolve, reject) => {
   const client = s3.createClient({
   s3Options: {
-      accessKeyId: 'YOUR_AWS_ACCESS_KEY',
-      secretAccessKey: 'YOUR_AWS_SECRET_KEY',
+      accessKeyId: keys.AWS_ACCESS_KEY,
+      secretAccessKey: keys.AWS_SECRET_KEY,
       region: 'us-west-2',
       sslEnabled: true,
     },
@@ -20,7 +21,7 @@ const Uploader = new Promise((resolve, reject) => {
     localDir: 'public/',
     deleteRemoved: true,
     s3Params: {
-      Bucket: 'YOUR_BUCKET_NAME'
+      Bucket: 'react-todoapp'
     },
   });
   uploader.on('error', reject);
